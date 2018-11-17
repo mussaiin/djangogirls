@@ -56,5 +56,4 @@ def post_edit(request, pk):
 
 def post_delete(request, pk):
     Post.objects.filter(pk=pk).delete()
-    posts = Post.objects.all().order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return redirect('post_list')
