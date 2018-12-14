@@ -1,1 +1,7 @@
-Django~=2.0.6
+django
+djangorestframework
+coreapi
+Markdown
+django-filter
+django-crispy-forms
+django-guardian
