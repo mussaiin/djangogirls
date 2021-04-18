@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: helloapp
-        image: helloapp
+        image: mussaiin/helloapp:v1
         ports:
           - name: web
             containerPort: 80
