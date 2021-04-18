@@ -28,5 +28,6 @@ urlpatterns = [
     path('', include(('blog.urls', 'blog'), namespace='blog')),
     path('api/', include(('blog.api.urls', 'blog'), namespace='blog')),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^health/', include('health_check.urls')),
 ]

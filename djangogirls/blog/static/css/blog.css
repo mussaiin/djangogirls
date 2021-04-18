@@ -1,6 +1,6 @@
 h1 a, h2 a {
     color: #C25100;
-    font-family: 'Lobster';
+    font-family: 'Avenir';
 }
 body {
 }
@@ -21,7 +21,8 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Avenir';
+    font-weight: bold;
 }
 
 .date {
@@ -41,6 +42,7 @@ h1, h2, h3, h4 {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    margin-top: 30px;
 }
 
 .post {
