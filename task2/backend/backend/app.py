@@ -1,36 +1,46 @@
 import os
 import time
 import json
-
+import flask
 from flask import Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app)
 
 
 @app.route("/health")
 def health():
-    return '{"status": "ok"}'
+    response = flask.jsonify({"status": "ok"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route("/version")
 def version():
-    return '{"version": "1"}'
+    response = flask.jsonify({"version": "1"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route("/nurlybek-mussin")
 def kbtu():
-    return 'Hello from Nurlybek Mussin!'
+    response = flask.jsonify({"response": "Hello from Nurlybek Mussin!"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route("/")
 def hello():
-    return 'Hello world from ' + os.environ["HOSTNAME"] + '!'
-
+    response = flask.jsonify({"response": 'Hello world from ' + os.environ["HOSTNAME"] + '!'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route("/author")
 def author():
-    return 'This project is made by Nurlybek Mussin.'
-
+    response = flask.jsonify({"response": 'This project is made by Nurlybek Mussin.'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__ == "__main__":
     time.sleep(10)
